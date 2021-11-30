@@ -1,13 +1,15 @@
-import { connect } from "mongoose";
+const mongoose = require("mongoose");
 
 //I setup the dnfo nedeed to connect with te database on mongo
-const url = `mongodb://mongo:27017/test`;
-
+const url = `mongodb://localhost:27017/malbecDB`;
+//TODO CONNECT THE DB TO DOCKER
 const connectionParams = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 };
-connect(url, connectionParams)
+
+mongoose
+  .connect(url, connectionParams)
   .then(() => {
     console.log("Connected to database ");
   })

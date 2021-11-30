@@ -3,10 +3,11 @@ version: "3.8"
 services:
   app:
     build: .
+    container_name: malbecEcommerce
     environment:
       MONGO_URL: "mongodb://db:27017/test"
-    depends_on:
-      - db
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: "1234"
     ports:
       - "3000:3000"
     volumes:
@@ -15,6 +16,10 @@ services:
     command: npx nodemon server.js -L
   db:
     container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: "1234"
+      MONGO_INITDB_DATABASE: test
     image: mongo
     ports:
       - "27017:27017"
