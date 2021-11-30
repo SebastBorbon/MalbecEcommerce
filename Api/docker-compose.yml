@@ -1,25 +1,15 @@
 version: "3.8"
 
 services:
-  app:
-    build: .
-    container_name: malbecEcommerce
-    environment:
-      MONGO_URL: "mongodb://db:27017/test"
-      MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: "1234"
-    ports:
-      - "3000:3000"
-    volumes:
-      - .:/usr/src
-      - /usr/src/node_modules
-    command: npx nodemon server.js -L
-  db:
+  mongodb:
+    image: mongo:latest
     container_name: mongodb
+    restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
-      MONGO_INITDB_ROOT_PASSWORD: "1234"
-      MONGO_INITDB_DATABASE: test
-    image: mongo
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: malbecDB
     ports:
-      - "27017:27017"
+      - 27017:27017
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
