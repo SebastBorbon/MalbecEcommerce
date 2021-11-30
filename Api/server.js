@@ -1,6 +1,7 @@
 const express = require("express");
 const authRoutes = require("./routers/auth").router;
 const app = express();
+require("./database.js"); // importa el archivo de conexión
 
 const port = 3000;
 app.use(express.json());

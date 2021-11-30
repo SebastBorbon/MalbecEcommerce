@@ -1,5 +1,6 @@
 const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
+
 const UserModel = mongoose.model("UserModel", {
   userName: String,
   password: String,
@@ -12,7 +13,9 @@ const registerUser = async (userName, password) => {
       userName: userName,
       password: hashedPwd,
     });
-    await newUser.save();
+    await newUser.save().then(() => {
+      console.log("todo bien rey");
+    });
   } catch (err) {
     console.log(err);
   }
