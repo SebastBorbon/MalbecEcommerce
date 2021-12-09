@@ -1,20 +1,25 @@
 const mongoose = require("mongoose");
 
-const LiqueurSchema = new mongoose.Schema({
-  name: {
+const ProductSchema = new mongoose.Schema({
+  title: {
     type: String,
     required: true,
+    unique: true,
   },
   price: {
     type: Number,
     required: true,
   },
-  brand: {
+  size: {
     type: String,
     required: true,
   },
-  stock: {
-    type: Number,
+  categories: {
+    type: Array,
+    required: true,
+  },
+  color: {
+    type: String,
     required: true,
   },
   imageUrl: {
@@ -27,6 +32,6 @@ const LiqueurSchema = new mongoose.Schema({
   },
 });
 
-const Liqueur = mongoose.model("Liqueur", LiqueurSchema, "liqueur");
+const Product = mongoose.model("Product", ProductSchema);
 
-module.exports = Liqueur;
+module.exports = Product;

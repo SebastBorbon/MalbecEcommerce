@@ -1,36 +1,30 @@
 const mongoose = require("mongoose");
-
-const UserSchema = new mongoose.Schema({
-  name: {
-    require: true,
-    type: String,
+const UserSchema = new mongoose.Schema(
+  {
+    username: {
+      require: true,
+      type: String,
+      unique: true,
+    },
+    email: {
+      required: true,
+      type: String,
+      unique: true,
+    },
+    password: {
+      required: true,
+      type: String,
+    },
+    addres: {
+      type: String,
+    },
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
   },
-  lastname: {
-    require: true,
-    type: String,
-  },
-  email: {
-    required: true,
-    type: String,
-  },
-  password: {
-    required: true,
-    type: String,
-  },
-  addres: {
-    required: true,
-    type: String,
-  },
-  status: {
-    required: false,
-    type: String,
-    default: "regular",
-  },
-  order: {
-    order: mongoose.Schema.Types.ObjectId,
-    // ref: "orders",
-  },
-});
+  { timestamps: true }
+);
 
 const User = mongoose.model("User", UserSchema, "users");
 
