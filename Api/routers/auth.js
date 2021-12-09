@@ -1,42 +1,52 @@
 const express = require("express");
-const router = express.Router();
-const { registerUser, checkUserCredentials } = require("../controllers/users");
 const jwt = require("jsonwebtoken");
-const UserSchema = require("../models/user");
+const User = require("../models/user");
+const CryptoJS = require("crypto-js");
+const router = express.Router();
 
-router.route("/signup").get((req, res) => {
-  res.send("hello sign up");
-});
-
-router.route("/signup").post(async (req, res) => {
-  console.log(req.body);
-  const { userName, password } = req.body;
+router.post("/signup", async (req, res) => {
+  const newUser = new User({
+    username: req.body.userName,
+    email: req.body.email,
+    password: CryptoJS.AES.encrypt(
+      req.body.password,
+      process.env.SECRETPASS
+    ).toString(),
+  });
   try {
-    if (req.body) {
-      await registerUser(userName, password);
-      res.send("user registred");
-    } else {
-      res.status(404).send({ message: "ta mal el user" });
-    }
+    const user = await newUser.save();
+    res.status(201).json(user);
   } catch (err) {
-    res.status(404).send({ message: "ta mal" });
+    res.status(500).json({ message: "failed the signup" });
   }
 });
 
-router.route("/login").post(async (req, res) => {
-  const { userName, password } = req.body;
+router.post("/login", async (req, res) => {
   try {
-    let user = await checkUserCredentials(userName, password);
+    const user = await User.findOne({ username: req.body.userName });
     console.log(user);
-    //if all the user data is correct, we send back the user
-    if (user) {
-      const token = jwt.sign({ userName: user.userName }, "secretPassword");
-      res.status(200).json({ token });
-    } else {
-      res.status(400).send({ message: "incorrect Password" });
-    }
+    if (!user) return res.status(401).json({ message: "Wrong credentials" });
+
+    const hashedPwd = CryptoJS.AES.decrypt(
+      user.password,
+      process.env.SECRETPASS,
+      { expiresIn: "1d" }
+    );
+    let ogPassword = hashedPwd.toString(CryptoJS.enc.Utf8);
+    if (ogPassword !== req.body.password)
+      return res.status(401).json({ message: "Wrong credentials" });
+    const token = jwt.sign(
+      {
+        id: user._id,
+        isAdmin: user.isAdmin,
+      },
+      process.env.JWT_KEY
+    );
+    const { password, ...others } = user._doc;
+    res.json({ ...others, token });
   } catch (err) {
-    res.status(404).send({ message: "connecting to DB" });
+    console.log(err);
+    res.status(500).json({ message: "failed the login" });
   }
 });
 
