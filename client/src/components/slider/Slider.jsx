@@ -41,13 +41,17 @@ const Slide = styled.div`
 `;
 const ImgContainer = styled.div`
   height: 100%;
-  flex: 1;
+  flex: 2;
   margin-left: 65px;
+  margin-top: 60px;
+  width: 100%;
 `;
 
 const Image = styled.img`
   height: 80%;
   border-radius: 10px;
+  width: 100%;
+  object-fit: cover;
 `;
 
 const Slider = () => {
@@ -61,7 +65,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="SliderContainer">
+    <div className="Slider-Container">
       <Arrow direction="left" onClick={() => handleClick("left")}>
         <ArrowLeftOutlinedIcon />
       </Arrow>
