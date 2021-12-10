@@ -1,0 +1,29 @@
+.SliderContainer {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.InfoContainer {
+  flex: 1;
+  padding: 50px;
+}
+
+.InfoTitle {
+  font-size: 60px;
+}
+.InfoDescription {
+  margin: 50px 0px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.InfoButton {
+  padding: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+}
