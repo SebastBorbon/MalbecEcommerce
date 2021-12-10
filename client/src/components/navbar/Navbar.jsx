@@ -12,7 +12,9 @@ const Navbar = () => {
           <span className="navbar-Language">EN</span>
           <div className="SearchContainer">
             <input className="SearchInput" />
-            <SearchIcon style={{ color: "black", fontSize: 18 }} />
+            <SearchIcon
+              style={{ color: "black", fontSize: 18, cursor: "pointer" }}
+            />
           </div>
         </div>
 

@@ -1,6 +1,6 @@
 .navbar-container {
   height: 60px;
-  background-color: #cfcfcf;
+  background-color: #f6f6f6;
 }
 .navbar-wrapper {
   padding: 10px 20px;
@@ -31,7 +31,13 @@
 
 .SearchInput {
   border: none;
-  background-color: #cfcfcf;
+  background-color: #f6f6f6;
+  transition: all 0.2s ease-in;
+}
+.SearchInput:focus {
+  background-color: #bbbbbb;
+  border-radius: 5px;
+  outline: none;
 }
 
 .SearchIcon {
