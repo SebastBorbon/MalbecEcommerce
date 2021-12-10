@@ -34,6 +34,7 @@ router.put("/:id", verifyAdmin, async (req, res) => {
   }
 });
 
+//delete user orders
 router.delete("/:id", verifyAdmin, async (req, res) => {
   try {
     await Order.findByIdAndDelete(req.params.id);
@@ -54,7 +55,6 @@ router.get("/find/:userId", verifyAuthorization, async (req, res) => {
 });
 
 // GET monthly income
-
 router.get("/income", verifyAdmin, async (req, res) => {
   const date = new Date();
   const lastMonth = new Date(date.setMonth(date.getMonth() - 1));

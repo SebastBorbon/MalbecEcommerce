@@ -1,9 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {
-  verifyAuthorization,
-  verifyAdmin,
-} = require("../middlewares/verifyToken");
+const { verifyAdmin } = require("../middlewares/verifyToken");
 const Product = require("../models/Product");
 
 router.post("/", verifyAdmin, async (req, res) => {
@@ -31,7 +28,6 @@ router.put("/:id", verifyAdmin, async (req, res) => {
   }
 });
 
-//DELETE product
 router.delete("/:id", verifyAdmin, async (req, res) => {
   try {
     await Product.findByIdAndDelete(req.params.id);
@@ -41,7 +37,6 @@ router.delete("/:id", verifyAdmin, async (req, res) => {
   }
 });
 
-//GET product
 router.get("/find/:id", async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -51,7 +46,6 @@ router.get("/find/:id", async (req, res) => {
   }
 });
 
-//Get all products
 router.get("/", verifyAdmin, async (req, res) => {
   const queryNew = req.query.new;
   const queryCategory = req.query.category;
