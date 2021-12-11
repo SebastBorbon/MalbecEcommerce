@@ -38,6 +38,6 @@
   transition: all 0.2s ease;
 }
 .ButtonCategory:hover {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.2);
   opacity: 90%;
 }
