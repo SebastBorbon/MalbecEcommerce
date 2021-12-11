@@ -1,0 +1,86 @@
+.Product-Container {
+  background-color: #cfcfcf;
+}
+
+.Product-Wrapper {
+  padding: 50px;
+  display: flex;
+}
+.Product-ImgContainer {
+  flex: 1;
+}
+.Product-Img {
+  width: 90%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.Product-InfoContainer {
+  flex: 1;
+  padding: 0px 50px;
+}
+.Title-InfoProduct {
+  font-weight: 400;
+  font-size: 50px;
+}
+.Desc-InfoProduct {
+  margin: 40px 0px;
+}
+.Price-InfoProduct {
+  font-size: 40px;
+}
+
+.Product-FilterContainer {
+  margin: 30px 0px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.Product-FilterTitle {
+}
+
+.Product-BtnSize {
+  width: 45px;
+  height: 30px;
+  margin: 0px 10px;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.Product-BtnSize:focus {
+  background-color: rgba(51, 32, 39, 0.2);
+  opacity: 90%;
+}
+
+.Product-AddContainer {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Product-AmountContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+.Product-Amount {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid rgb(38, 36, 42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Product-BtnCart {
+  padding: 15px;
+  background-color: #cfcfcf;
+  border: 2px solid rgb(38, 36, 42);
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+.Product-BtnCart:hover {
+  background-color: rgb(185, 185, 185);
+}
