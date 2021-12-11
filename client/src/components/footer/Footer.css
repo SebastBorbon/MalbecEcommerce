@@ -1,0 +1,70 @@
+.Footer-Container {
+  display: flex;
+  background-color: rgb(17, 17, 17);
+}
+
+.Footer-Left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+.Footer-Logo {
+  color: white;
+}
+
+.Footer-Description {
+  margin: 20px 0px;
+  color: white;
+}
+.FootersIcons-Container {
+  display: flex;
+}
+
+.Footer-Icons {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  background-color: rgb(49, 38, 58);
+}
+
+.Footer-Center {
+  flex: 1;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.Footer-Title {
+  margin-bottom: 30px;
+  color: white;
+}
+.Footer-List {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+}
+
+.Footer-ListItem {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.Footer-Right {
+  flex: 1;
+  padding: 20px;
+}
+
+.Footer-ContactItem {
+  color: white;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
