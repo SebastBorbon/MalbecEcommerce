@@ -38,3 +38,46 @@ export const categories = [
     title: "ADIDAS X BAD BUNNY",
   },
 ];
+
+export const popularProducts = [
+  {
+    id: 1,
+    img: "https://media.revistagq.com/photos/5e7ddf4592a68e0008db9d4a/master/w_1600%2Cc_limit/nikeairforce12.jpg",
+    name: "Air force 1",
+  },
+  {
+    id: 2,
+    img: "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2020%2F09%2Fg-dragon-peaceminusone-af1-para-noise-2-0-release-date-dd3223-100-000.jpg",
+    name: "Air force 1 paranoise ",
+  },
+  {
+    id: 3,
+    img: "https://gamarraecommerce.com/wp-content/uploads/2020/03/Adidas-Yeezy-700-V3-Azael-2.jpg",
+    name: "Yeezy 700 v3",
+  },
+  {
+    id: 4,
+    img: "https://cdn.flightclub.com/750/TEMPLATE/805530/2.jpg",
+    name: "Adidas Pharrell",
+  },
+  {
+    id: 5,
+    img: "https://images-na.ssl-images-amazon.com/images/I/61FJWbdvKlL._AC_UX500_.jpg",
+    name: "Air Jordan 1 Miles Morales",
+  },
+  {
+    id: 6,
+    img: "https://gamarraecommerce.com/wp-content/uploads/2020/06/Jordan-1-Mid-Milan-2.jpg",
+    name: "Air Jordan 1 Milan",
+  },
+  {
+    id: 7,
+    img: "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F02%2Fair-jordan-1-university-blue-555088-134-release-date-2.jpg?q=75&w=800&cbr=1&fit=max",
+    name: "Air Jordan 1 University Blue",
+  },
+  {
+    id: 8,
+    img: "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F03%2Fair-jordan-4-university-blue-ct8527-400-release-date-1.jpg?q=75&w=800&cbr=1&fit=max",
+    name: "Air Jordan 4 University Blue",
+  },
+];
