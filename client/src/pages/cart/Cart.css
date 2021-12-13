@@ -1,0 +1,121 @@
+.Cart-Container {
+}
+
+.Cart-Wrapper {
+  padding: 20px;
+}
+
+.Cart-Title {
+  font-weight: 500;
+  text-align: center;
+}
+.Cart-Top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+.BtnTop {
+  border: none;
+  padding: 15px 20px;
+  background-color: rgb(27, 13, 23);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.BtnTop:hover {
+  background-color: rgb(134, 71, 115);
+}
+
+.TextTop {
+  text-decoration: underline;
+  cursor: pointer;
+  margin: 0px 10px;
+}
+.Cart-Bottom {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.Cart-Info {
+  flex: 3;
+}
+.Cart-Products {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Cart-Detail {
+  flex: 2;
+  display: flex;
+}
+.CartProduct-img {
+  width: 220px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.CartProduct-Details {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.CartPrice-Detail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.CartPrice-Container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.CartPrice-Product {
+  font-size: 24px;
+  margin: 5px;
+}
+
+.CartProduct-Price {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.Cart-Summary {
+  flex: 1;
+  border-left: 0.5px solid rgb(22, 22, 22);
+  border-radius: 1px;
+  padding: 20px;
+  height: 50vh;
+}
+.CartSummary-Title {
+  font-weight: 300;
+}
+.CartSummary-Items {
+  margin: 30px 0px;
+  display: flex;
+  justify-content: space-between;
+}
+.CartSummary-Text {
+}
+.CartSummary-Total {
+  font-weight: 700;
+  font-size: 25px;
+}
+.BtnPayCart {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  padding: 15px 20px;
+  background-color: rgb(27, 13, 23);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.BtnPayCart:hover {
+  background-color: rgb(134, 71, 115);
+}
