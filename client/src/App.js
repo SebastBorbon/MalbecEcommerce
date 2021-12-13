@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import ProductList from "./pages/producList/ProductList";
 import Product from "./pages/ProductPage/Product";
 import Register from "./pages/register/Register";
+import Cart from "./pages/cart/Cart";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/payment" element={<Pay />} />
+        <Route exact path="/cart" element={<Cart />} />
       </Routes>
     </>
   );
