@@ -1,0 +1,65 @@
+.Login-Container {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(26, 26, 26, 0.5), rgba(51, 51, 51, 0.5)),
+    url("http://www.cordonsnegres.com/wp-content/uploads/air-jordan-1-retro-high-chicago-01.jpg")
+      center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Login-Wrapper {
+  width: 15%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+.Login-Title {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.Login-Form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Login-Input {
+  flex: 1;
+  min-width: 40%;
+  margin: 10px 0px;
+  padding: 10px;
+}
+
+.Login-Link {
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  align-self: flex-end;
+  font-weight: 600;
+  color: black;
+}
+.Login-Link:hover {
+  color: rgb(255, 134, 112);
+}
+
+.BtnLogin {
+  margin: 10px 0px;
+  width: 100%;
+  border: none;
+  padding: 15px 20px;
+  background-color: rgb(27, 13, 23);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.BtnLogin:hover {
+  background-color: rgb(134, 71, 115);
+}
+
+.Login-Span {
+  margin-top: 15px;
+  align-self: center;
+}
