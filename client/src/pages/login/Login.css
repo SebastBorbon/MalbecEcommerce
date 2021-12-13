@@ -37,7 +37,7 @@
   text-decoration: none;
   cursor: pointer;
   margin-bottom: 10px;
-  align-self: flex-end;
+  text-align: end;
   font-weight: 600;
   color: black;
 }
