@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@mui/icons-material": "^5.2.1",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "crypto-js": "^4.1.1",
