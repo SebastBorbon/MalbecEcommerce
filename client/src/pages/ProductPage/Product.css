@@ -1,5 +1,5 @@
 .Product-Container {
-  background-color: #cfcfcf;
+  background-color: white;
 }
 
 .Product-Wrapper {
@@ -35,9 +35,6 @@
   justify-content: flex-start;
 }
 
-.Product-FilterTitle {
-}
-
 .Product-BtnSize {
   width: 45px;
   height: 30px;
@@ -46,6 +43,9 @@
   background-color: transparent;
   cursor: pointer;
   border-radius: 3px;
+}
+.Product-BtnSize:hover {
+  background-color: rgba(134, 134, 134, 0.2);
 }
 .Product-BtnSize:focus {
   background-color: rgba(51, 32, 39, 0.2);
@@ -74,13 +74,13 @@
   justify-content: center;
 }
 .Product-BtnCart {
-  padding: 15px;
-  background-color: #cfcfcf;
-  border: 2px solid rgb(38, 36, 42);
-  border-radius: 10px;
+  border: none;
+  padding: 15px 20px;
+  background-color: rgb(27, 13, 23);
+  color: white;
   cursor: pointer;
-  font-weight: 500;
+  border-radius: 5px;
 }
 .Product-BtnCart:hover {
-  background-color: rgb(185, 185, 185);
+  background-color: rgb(134, 71, 115);
 }
