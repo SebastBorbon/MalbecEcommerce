@@ -26,16 +26,19 @@ export const categories = [
     id: 1,
     img: "https://sneakernews.com/wp-content/uploads/2017/08/puma-the-weeknd-parallels-olive.jpg",
     title: "PUMA XO THE WEEKND",
+    brand: "puma",
   },
   {
     id: 2,
     img: "https://static.nike.com/a/images/w_1536,c_limit,f_auto/1934759e-af30-433f-82a6-6d2f421d8755/air-force-1-para-noise-release-date.jpg",
     title: "PARANOISE AIR FORCE 1",
+    brand: "nike",
   },
   {
     id: 3,
     img: "https://media.glamour.mx/photos/61905bf7a6e030d6480f6413/master/w_1600%2Cc_limit/254100.jpg",
     title: "ADIDAS X BAD BUNNY",
+    brand: "adidas",
   },
 ];
 
