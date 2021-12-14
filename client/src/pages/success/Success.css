@@ -1,0 +1,12 @@
+.Success-Container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnSuccess {
+  padding: 10px;
+  margin-top: 20px;
+}
