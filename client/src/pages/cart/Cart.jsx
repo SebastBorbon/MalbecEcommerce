@@ -50,16 +50,16 @@ const Cart = () => {
         <div className="Cart-Top">
           <button className="BtnTop">Continue Shopping</button>
           <div className="TextCart-Container">
-            <span className="TextTop">Shopping Bag (N)</span>
-            <span className="TextTop">Your wishlist (N)</span>
+            <span className="TextTop">Shopping Bag {cart.quantity}</span>
+            <span className="TextTop">Your wishlist </span>
           </div>
           <button className="BtnTop">Check Out</button>
         </div>
         <div className="Cart-Bottom">
           <div className="Cart-Info">
-            {cart.products.map((product) => {
+            {cart.products.map((product, index) => {
               return (
-                <div className="Cart-Products">
+                <div className="Cart-Products" key={index}>
                   <div className="Cart-Detail">
                     <img
                       className="CartProduct-img"

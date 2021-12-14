@@ -35,10 +35,11 @@ const Success = () => {
   return (
     <div className="Success-Container">
       {orderId
-        ? `Order has been created successfully. Your order number is ${orderId}`
+        ? `Thanks for your purchase!  
+        Order has been created successfully. Your order number is ${orderId}`
         : `Successfull. Your order is being prepared...`}
       <Link to="/">
-        <button className="btnSuccess">Go to Homepage</button>
+        <button className="btnSuccess">Return to Home</button>
       </Link>
     </div>
   );

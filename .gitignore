@@ -2,3 +2,5 @@
 Api/node_modules/
 
 Api/.env
+
+client/.env
