@@ -65,5 +65,16 @@
 .MenuItem {
   font-size: 20px;
   cursor: pointer;
-  margin-left: 20px;
+  margin-left: 30px;
+}
+.BtnLogOut {
+  border: none;
+  height: 30px;
+  cursor: pointer;
+  background-color: rgb(77, 45, 68);
+  color: white;
+  border-radius: 5px;
+}
+.BtnLogOut:hover {
+  background-color: rgb(134, 71, 115);
 }

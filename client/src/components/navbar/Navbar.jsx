@@ -19,7 +19,12 @@ const Navbar = () => {
       navigate(`/products/${search}`);
     }
   };
-
+  const HandlelogOut = () => {
+    if (user) {
+      window.localStorage.removeItem("persist:root");
+      window.location.reload();
+    }
+  };
   return (
     <div className="navbar-container">
       <div className="navbar-wrapper">
@@ -44,9 +49,16 @@ const Navbar = () => {
         </div>
         <div className="navbar-right">
           {user ? (
-            <span className="navbar-userName">
-              Hi again: <b>{user.username}!</b>
-            </span>
+            <div className="navbar-User">
+              <div className="MenuItem">
+                Hi: <b>{user.username}!</b>
+              </div>
+              <div className="MenuItem">
+                <button className="BtnLogOut" onClick={HandlelogOut}>
+                  Log Out
+                </button>
+              </div>
+            </div>
           ) : (
             <div className="navbar-User">
               <div className="MenuItem">
