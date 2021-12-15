@@ -11,13 +11,15 @@ const Image = styled.img`
 const CategoryItem = ({ item }) => {
   return (
     <div className="CategoryItem-Container">
-      <Link to={`/products/${item.category}`}>
-        <Image src={item.img} />
-        <div className="InfoCategory">
-          <h1 className="TitleCategory">{item.title}</h1>
-          <button className="ButtonCategory">Know More</button>
-        </div>
-      </Link>
+      <Image src={item.img} />
+      <div className="InfoCategory">
+        <h1 className="TitleCategory">{item.title}</h1>
+        <button className="ButtonCategory">
+          <Link className="Link-Category" to={`/products/${item.brand}`}>
+            Know More
+          </Link>
+        </button>
+      </div>
     </div>
   );
 };
