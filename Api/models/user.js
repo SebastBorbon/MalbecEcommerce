@@ -15,7 +15,7 @@ const UserSchema = new mongoose.Schema(
       required: true,
       type: String,
     },
-    addres: {
+    address: {
       type: String,
     },
     isAdmin: {

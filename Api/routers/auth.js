@@ -5,19 +5,21 @@ const CryptoJS = require("crypto-js");
 const router = express.Router();
 
 router.post("/signup", async (req, res) => {
+  console.log(req.body);
   const newUser = new User({
     username: req.body.userName,
     email: req.body.email,
+    address: req.body.address,
     password: CryptoJS.AES.encrypt(
       req.body.password,
       process.env.SECRETPASS
     ).toString(),
   });
   try {
-    const user = await newUser.save();
-    res.status(201).json(user);
+    await newUser.save();
+    res.status(201).json("new user created");
   } catch (err) {
-    res.status(500).json({ message: "failed the signup" });
+    res.status(500).json("failed the signup");
   }
 });
 
@@ -25,7 +27,7 @@ router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.userName });
     console.log(user);
-    if (!user) return res.status(401).json({ message: "Wrong credentials" });
+    if (!user) return res.status(401).json("Wrong credentials");
 
     const hashedPwd = CryptoJS.AES.decrypt(
       user.password,
