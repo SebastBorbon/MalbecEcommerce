@@ -2,8 +2,6 @@ import Announcement from "../../components/announcement/Announcement";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import "./Cart.css";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
 import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
 import { useState, useEffect } from "react";
@@ -41,6 +39,10 @@ const Cart = () => {
     }
   }, [stripeToken, cart, navigate]);
 
+  const handleProducts = () => {
+    navigate("/products/shoes");
+  };
+
   return (
     <div className="Cart-Container">
       <Navbar />
@@ -48,12 +50,26 @@ const Cart = () => {
       <div className="Cart-Wrapper">
         <h1 className="Cart-Title">YOUR BAG</h1>
         <div className="Cart-Top">
-          <button className="BtnTop">Continue Shopping</button>
+          <button className="BtnTop" onClick={handleProducts}>
+            Continue Shopping
+          </button>
           <div className="TextCart-Container">
-            <span className="TextTop">Shopping Bag {cart.quantity}</span>
-            <span className="TextTop">Your wishlist </span>
+            <span className="TextTop">
+              Shopping Bag: <b>{cart.quantity}</b> items
+            </span>
           </div>
-          <button className="BtnTop">Check Out</button>
+          <StripeCheckout
+            name="Malbec"
+            image=""
+            billingAddress
+            shippingAddress
+            description={`Your total is $${cart.total}`}
+            amount={cart.total * 100}
+            token={onToken}
+            stripeKey={KEY}
+          >
+            <button className="BtnTop">Check out</button>
+          </StripeCheckout>
         </div>
         <div className="Cart-Bottom">
           <div className="Cart-Info">
@@ -82,14 +98,12 @@ const Cart = () => {
                   </div>
                   <div className="CartPrice-Detail">
                     <div className="CartPrice-Container">
-                      <AddIcon />
                       <div className="CartPrice-Product">
-                        {product.quantity}
+                        quantity: {product.quantity}
                       </div>
-                      <RemoveIcon />
                     </div>
                     <div className="CartProduct-Price">
-                      $ {product.price * product.quantity}
+                      price: ${product.price * product.quantity}
                     </div>
                   </div>
                 </div>
