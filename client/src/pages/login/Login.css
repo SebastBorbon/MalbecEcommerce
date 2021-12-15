@@ -58,8 +58,33 @@
 .BtnLogin:hover {
   background-color: rgb(134, 71, 115);
 }
+.BtnLogin:disabled {
+  cursor: not-allowed;
+}
 
 .Login-Span {
   margin-top: 15px;
   align-self: center;
+  font-weight: 700;
+}
+.BtnNewAccount {
+  margin: 10px 0px;
+  width: 100%;
+  border: none;
+  font-weight: 700;
+  padding: 15px 20px;
+  background-color: rgb(204, 204, 204);
+  color: rgb(58, 51, 51);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.BtnNewAccount:hover {
+  background-color: rgb(255, 134, 112);
+}
+.BtnNewAccount:disabled {
+  cursor: not-allowed;
+}
+.Login-Error {
+  color: red;
 }
