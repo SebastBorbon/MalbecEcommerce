@@ -2,7 +2,7 @@ import "./Login.css";
 import { useState, useEffect } from "react";
 import { login } from "../../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [userName, setUserName] = useState("");
@@ -41,7 +41,7 @@ const Login = () => {
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <a className="Login-Link">forgot the password?</a>
+          <span className="Login-Link">forgot the password?</span>
           <button
             className="BtnLogin"
             onClick={handleClick}

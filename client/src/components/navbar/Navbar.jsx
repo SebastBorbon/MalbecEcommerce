@@ -29,7 +29,6 @@ const Navbar = () => {
     <div className="navbar-container">
       <div className="navbar-wrapper">
         <div className="navbar-left">
-          <span className="navbar-Language">EN</span>
           <div className="SearchContainer">
             <input
               className="SearchInput"
@@ -48,33 +47,11 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-right">
-          {user ? (
-            <div className="navbar-User">
-              <div className="MenuItem">
-                Hi: <b>{user.username}!</b>
-              </div>
-              <div className="MenuItem">
-                <button className="BtnLogOut" onClick={HandlelogOut}>
-                  Log Out
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="navbar-User">
-              <div className="MenuItem">
-                <Link to="/register" className="LinkItem">
-                  Sign up
-                </Link>
-              </div>
-              <div className="MenuItem">
-                <Link to="/login" className="LinkItem">
-                  Sign in
-                </Link>
-              </div>
-            </div>
-          )}
-          <Link to="/cart" className="LinkItem">
+          <div className="MenuItem">Sign up</div>
+          <div className="MenuItem">Sign in</div>
+          <Link to="/cart">
             <div className="MenuItem">
+>>>>>>> main
               <Badge badgeContent={quantity} color="primary">
                 <ShoppingCartOutlinedIcon />
               </Badge>

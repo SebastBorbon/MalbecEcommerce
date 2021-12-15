@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./Slider.css";
-import ArrowLeftOutlinedIcon from "@mui/icons-material/ArrowLeftOutlined";
-import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowRightOutlined";
+
 import styled from "styled-components";
 import { sliderItems } from "../../data";
 import { Link } from "react-router-dom";
@@ -57,19 +56,17 @@ const Image = styled.img`
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
-  const handleClick = (direction) => {
-    if (direction === "left") {
-      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : sliderItems.length - 1);
-    } else {
-      setSlideIndex(slideIndex < sliderItems.length - 1 ? slideIndex + 1 : 0);
-    }
+
+  const SliderMove = () => {
+    slideIndex < sliderItems.length - 1
+      ? setSlideIndex(slideIndex + 1)
+      : setSlideIndex(0);
   };
+
+  setTimeout(SliderMove, 4000);
 
   return (
     <div className="Slider-Container">
-      <Arrow direction="left" onClick={() => handleClick("left")}>
-        <ArrowLeftOutlinedIcon />
-      </Arrow>
       <Wrapper slideIndex={slideIndex}>
         {sliderItems.map((item) => {
           return (
@@ -88,9 +85,6 @@ const Slider = () => {
           );
         })}
       </Wrapper>
-      <Arrow direction="right" onClick={() => handleClick("right")}>
-        <ArrowRightOutlinedIcon />
-      </Arrow>
     </div>
   );
 };
