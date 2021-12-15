@@ -1,0 +1,46 @@
+.Login-Container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(93, 78, 107);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Login-Title {
+  font-size: 30px;
+  font-weight: 300;
+}
+.Login-Wrapper {
+  width: 15%;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+.Login-Form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Login-Input {
+  flex: 1;
+  min-width: 40%;
+  margin: 10px 0px;
+  padding: 10px;
+}
+
+.BtnLogin {
+  margin: 10px 0px;
+  width: 100%;
+  border: none;
+  padding: 15px 20px;
+  background-color: rgb(27, 13, 23);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.BtnLogin:hover {
+  background-color: rgb(134, 71, 115);
+}
+.BtnLogin:disabled {
+  cursor: not-allowed;
+}
