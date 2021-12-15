@@ -4,6 +4,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -16,29 +17,46 @@ const Footer = () => {
           with JWT , all in docker with Docker Compose
         </p>
         <div className="FootersIcons-Container">
-          <div className="Footer-Icons">
+          <a
+            className="Footer-Icons"
+            href="https://www.instagram.com/sebastb25/"
+          >
             <InstagramIcon />
-          </div>
-          <div className="Footer-Icons">
+          </a>
+          <a className="Footer-Icons" href="https://twitter.com/SebastFlower">
             <TwitterIcon />
-          </div>
-          <div className="Footer-Icons">
+          </a>
+          <a className="Footer-Icons" href="https://github.com/SebastBorbon">
             <GitHubIcon />
-          </div>
-          <div className="Footer-Icons">
+          </a>
+          <a className="Footer-Icons" href="https://www.linkedin.com/login/es">
             <LinkedInIcon />
-          </div>
+          </a>
         </div>
       </div>
       <div className="Footer-Center">
         <h2 className="Footer-Title">You may want to see</h2>
         <ul className="Footer-List">
-          <li className="Footer-ListItem">Home</li>
-          <li className="Footer-ListItem">Cart</li>
-          <li className="Footer-ListItem">Shoes</li>
-          <li className="Footer-ListItem">My Account</li>
-          <li className="Footer-ListItem">My Order</li>
-          <li className="Footer-ListItem">WishList</li>
+          <li className="Footer-ListItem">
+            <Link to="/" className="Footer-Link">
+              Home
+            </Link>
+          </li>
+          <li className="Footer-ListItem">
+            <Link to="/cart" className="Footer-Link">
+              Cart
+            </Link>
+          </li>
+          <li className="Footer-ListItem">
+            <Link to="/products/shoes" className="Footer-Link">
+              Shoes
+            </Link>
+          </li>
+          <li className="Footer-ListItem">
+            <Link to="/products/shoes" className="Footer-Link">
+              My Account
+            </Link>
+          </li>
         </ul>
       </div>
       <div className="Footer-Right">

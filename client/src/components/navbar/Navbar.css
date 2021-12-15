@@ -35,7 +35,7 @@
   transition: all 0.2s ease-in;
 }
 .SearchInput:focus {
-  background-color: #bbbbbb;
+  background-color: #e7e7e7;
   border-radius: 5px;
   outline: none;
 }
@@ -55,8 +55,15 @@
   align-items: center;
   justify-content: flex-end;
 }
+.LinkItem {
+  text-decoration: none;
+  color: black;
+}
+.navbar-User {
+  display: flex;
+}
 .MenuItem {
   font-size: 20px;
   cursor: pointer;
-  margin-left: 25px;
+  margin-left: 20px;
 }

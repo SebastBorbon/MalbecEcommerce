@@ -68,3 +68,10 @@
   display: flex;
   align-items: center;
 }
+.Footer-Link {
+  text-decoration: none;
+  color: white;
+}
+.Footer-Link:hover {
+  color: aqua;
+}
