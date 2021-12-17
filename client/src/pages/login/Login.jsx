@@ -10,7 +10,6 @@ const Login = () => {
   const dispatch = useDispatch();
   const { isFetching, error } = useSelector((state) => state.user);
   const user = useSelector((state) => state.user.currentUser);
-
   const navigate = useNavigate();
 
   useEffect(() => {

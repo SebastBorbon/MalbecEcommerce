@@ -14,11 +14,12 @@ const ProductSchema = new mongoose.Schema({
     type: [],
     required: true,
   },
-  categories: {
+  brand: {
     type: Array,
     required: true,
+    default: "adidas",
   },
-  brand: {
+  categories: {
     type: [],
     required: true,
   },

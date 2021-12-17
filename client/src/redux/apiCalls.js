@@ -1,5 +1,5 @@
 import axios from "axios";
-import { loginStart, loginFailure, loginSuccess } from "./userReducer";
+import { loginStart, loginFailure, loginSuccess, logOut } from "./userReducer";
 
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
@@ -9,4 +9,8 @@ export const login = async (dispatch, user) => {
   } catch (err) {
     dispatch(loginFailure());
   }
+};
+
+export const logOut = (dispatch) => {
+  dispatch(logOut());
 };

@@ -6,12 +6,15 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { logOut } from "../../redux/userReducer";
+import { useDispatch } from "react-redux";
 
 const Navbar = () => {
   const quantity = useSelector((state) => state.cart.quantity);
   const user = useSelector((state) => state.user.currentUser);
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -21,7 +24,7 @@ const Navbar = () => {
   };
   const HandlelogOut = () => {
     if (user) {
-      window.localStorage.removeItem("persist:root");
+      logOut(dispatch);
       window.location.reload();
     }
   };
