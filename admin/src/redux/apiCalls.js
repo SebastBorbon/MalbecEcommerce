@@ -14,6 +14,17 @@ import {
   addProductFailure,
 } from "./productReducer";
 import { loginStart, loginFailure, loginSuccess } from "./userReducer";
+import {
+  getMalbecUsersStart,
+  getMalbecUsersSuccess,
+  getMalbecUsersFailure,
+  deleteMalbecUsersStart,
+  deleteMalbecUsersSuccess,
+  deleteMalbecUsersFailure,
+  addMalbecUsersStart,
+  addMalbecUsersSuccess,
+  addMalbecUsersFailure,
+} from "./usersReducer";
 
 const TOKEN = JSON.parse(
   JSON.parse(localStorage.getItem("persist:root")).currentUser
@@ -59,6 +70,11 @@ export const deleteProducts = async (id, dispatch) => {
 export const updateProducts = async (id, product, dispatch) => {
   dispatch(updateProductStart());
   try {
+    await axios.put(
+      `http://localhost:3000/api/products/${id}`,
+      product,
+      AdminToken
+    );
     dispatch(updateProductSuccess(id, product));
   } catch (err) {
     dispatch(updateProductFailure());
@@ -68,9 +84,48 @@ export const updateProducts = async (id, product, dispatch) => {
 export const addProducts = async (product, dispatch) => {
   dispatch(addProductStart());
   try {
-    const res = await axios.post(`http://localhost:3000/api/products`, product);
+    const res = await axios.post(
+      `http://localhost:3000/api/products`,
+      product,
+      AdminToken
+    );
     dispatch(addProductSuccess(res.data));
   } catch (err) {
     dispatch(addProductFailure());
+  }
+};
+
+export const getMalbecUsers = async (dispatch) => {
+  dispatch(getMalbecUsersStart());
+  try {
+    const res = await axios.get("http://localhost:3000/api/user", AdminToken);
+
+    dispatch(getMalbecUsersSuccess(res.data));
+  } catch (err) {
+    dispatch(getMalbecUsersFailure());
+  }
+};
+
+export const deleteMalbecUsers = async (id, dispatch) => {
+  dispatch(deleteMalbecUsersStart());
+  try {
+    await axios.delete(`http://localhost:3000/api/user/${id}`, AdminToken);
+    dispatch(deleteMalbecUsersSuccess(id));
+  } catch (err) {
+    dispatch(deleteMalbecUsersFailure());
+  }
+};
+
+export const addMalbecUsers = async (user, dispatch) => {
+  dispatch(addMalbecUsersStart());
+  try {
+    const res = await axios.post(
+      `http://localhost:3000/api/auth/signup`,
+      user,
+      AdminToken
+    );
+    dispatch(addMalbecUsersSuccess(res.data));
+  } catch (err) {
+    dispatch(addMalbecUsersFailure());
   }
 };
