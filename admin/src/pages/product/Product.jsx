@@ -2,8 +2,9 @@ import { Link, useLocation, useHistory } from "react-router-dom";
 import "./product.css";
 import Chart from "../../components/chart/Chart";
 import { Publish } from "@material-ui/icons";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
+import { updateProducts } from "../../redux/apiCalls";
 
 export default function Product() {
   const location = useLocation();
@@ -12,6 +13,12 @@ export default function Product() {
     state.product.products.find((product) => product._id === productId)
   );
   const history = useHistory();
+  const dispatch = useDispatch();
+
+  const handleUpdate = (id) => {
+    const setNewProduct = [];
+    updateProducts(id, product, dispatch);
+  };
 
   useEffect(() => {
     if (!product) {
@@ -44,10 +51,6 @@ export default function Product() {
               <span className="productInfoKey">sales:</span>
               <span className="productInfoValue">5123</span>
             </div>
-            <div className="productInfoItem">
-              <span className="productInfoKey">in stock:</span>
-              <span className="productInfoValue">{product?.Stock}</span>
-            </div>
           </div>
         </div>
       </div>
@@ -59,7 +62,7 @@ export default function Product() {
             <label>Product Description</label>
             <input type="text" placeholder={product?.description} />
             <label>Product Price</label>
-            <input type="text" placeholder={product?.price} />
+            <input name="price" type="text" placeholder={product?.price} />
             <label>In Stock</label>
             <select name="inStock" id="idStock">
               <option value="true">Yes</option>
@@ -78,7 +81,9 @@ export default function Product() {
               </label>
               <input type="file" id="file" style={{ display: "none" }} />
             </div>
-            <button className="productButton">Update</button>
+            <button className="productButton" onClick={handleUpdate}>
+              Update
+            </button>
           </div>
         </form>
       </div>
