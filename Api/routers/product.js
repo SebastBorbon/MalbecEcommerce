@@ -3,19 +3,19 @@ const router = express.Router();
 const { verifyAdmin } = require("../middlewares/verifyToken");
 const Product = require("../models/Product");
 
-router.post("/", async (req, res) => {
-  console.log(req.body);
-
+router.post("/", verifyAdmin, async (req, res) => {
   const newProduct = new Product(req.body);
   try {
-    const savedProduct = await newProduct.save();
+    await newProduct.save();
     res.json("product created");
   } catch (err) {
     res.status(500).json(err);
+    console.log(err);
   }
 });
 
 router.put("/:id", verifyAdmin, async (req, res) => {
+  console.log(req.body);
   try {
     const updatedProduct = await Product.findByIdAndUpdate(
       req.params.id,

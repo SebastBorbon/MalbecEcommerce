@@ -5,6 +5,7 @@ const CryptoJS = require("crypto-js");
 const router = express.Router();
 
 router.post("/signup", async (req, res) => {
+  console.log(req.body);
   const newUser = new User({
     username: req.body.userName,
     email: req.body.email,
@@ -19,6 +20,7 @@ router.post("/signup", async (req, res) => {
     res.status(201).json("new user created");
   } catch (err) {
     res.status(500).json("failed the signup");
+    console.log(err);
   }
 });
 
