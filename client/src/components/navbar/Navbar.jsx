@@ -24,7 +24,7 @@ const Navbar = () => {
   };
   const HandlelogOut = () => {
     if (user) {
-      logOut(dispatch);
+      dispatch(logOut());
       window.location.reload();
     }
   };

@@ -15,7 +15,7 @@ const CategoryItem = ({ item }) => {
       <div className="InfoCategory">
         <h1 className="TitleCategory">{item.title}</h1>
         <button className="ButtonCategory">
-          <Link className="Link-Category" to={`/products/${item.brand}`}>
+          <Link className="Link-Category" to={`/product/${item.id}`}>
             Know More
           </Link>
         </button>

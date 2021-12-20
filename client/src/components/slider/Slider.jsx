@@ -1,27 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Slider.css";
 import styled from "styled-components";
 import { sliderItems } from "../../data";
 import { Link } from "react-router-dom";
-
-const Arrow = styled.div`
-  width: 50px;
-  height: 50px;
-  background-color: #fff7f7;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: ${(props) => props.direction === "left" && "10px"};
-  right: ${(props) => props.direction === "right" && "10px"};
-  margin: auto;
-  cursor: pointer;
-  opacity: 0.5;
-  z-index: 2;
-`;
 
 const Wrapper = styled.div`
   height: 100%;
@@ -56,13 +37,22 @@ const Image = styled.img`
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(0);
 
-  const SliderMove = () => {
-    slideIndex < sliderItems.length - 1
-      ? setSlideIndex(slideIndex + 1)
-      : setSlideIndex(0);
-  };
+  useEffect(() => {
+    let isMounted = true;
+    const SliderMove = () => {
+      if (slideIndex < sliderItems.length - 1)
+        if (isMounted) {
+          setSlideIndex(slideIndex + 1);
+        } else {
+          setSlideIndex(0);
+        }
+    };
+    setTimeout(SliderMove, 4000);
 
-  setTimeout(SliderMove, 4000);
+    return () => {
+      isMounted = false;
+    };
+  }, [slideIndex]);
 
   return (
     <div className="Slider-Container">
@@ -76,7 +66,10 @@ const Slider = () => {
               <div className="InfoContainer">
                 <h1 className="InfoTitle">{item.title}</h1>
                 <p className="InfoDescription">{item.description}</p>
-                <Link to="/products/shoes">
+                <Link
+                  to="/products/shoes
+                "
+                >
                   <button className="InfoButton">Shop Now</button>
                 </Link>
               </div>
