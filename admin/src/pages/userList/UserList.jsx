@@ -17,7 +17,6 @@ export default function UserList() {
     getMalbecUsers(dispatch);
   }, [dispatch]);
 
-  console.log(malbecUsers);
   const columns = [
     { field: "_id", headerName: "ID", width: 200 },
     {
@@ -65,7 +64,8 @@ export default function UserList() {
         disableSelectionOnClick
         columns={columns}
         getRowId={(row) => row._id}
-        pageSize={8}
+        pageSize={5}
+        rowsPerPageOptions={[5, 6, 7, 8]}
         checkboxSelection
       />
     </div>

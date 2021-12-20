@@ -16,7 +16,6 @@ export default function Product() {
   const dispatch = useDispatch();
 
   const handleUpdate = (id) => {
-    const setNewProduct = [];
     updateProducts(id, product, dispatch);
   };
 

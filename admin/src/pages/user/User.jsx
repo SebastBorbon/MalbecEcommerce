@@ -20,7 +20,7 @@ export default function User() {
 
   useEffect(() => {
     if (!users) {
-      history.push("/products");
+      history.push("/users");
     }
   }, [users, history]);
   return (

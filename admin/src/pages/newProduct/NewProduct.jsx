@@ -16,15 +16,15 @@ export default function NewProduct() {
   };
 
   const handleSizes = (e) => {
-    setCategories(e.target.value.split(","));
+    setSizes(e.target.value.split(","));
   };
   const handleCategories = (e) => {
-    setSizes(e.target.value.split(","));
+    setCategories(e.target.value.split(","));
   };
 
   const handleClick = (e) => {
     e.preventDefault(e);
-    const product = { ...inputs, categories, size };
+    const product = { ...inputs, size, categories };
     addProducts(product, dispatch);
   };
 

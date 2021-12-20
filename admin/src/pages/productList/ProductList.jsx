@@ -71,6 +71,7 @@ export default function ProductList() {
         columns={columns}
         getRowId={(row) => row._id}
         pageSize={8}
+        rowsPerPageOptions={[8]}
         checkboxSelection
       />
     </div>

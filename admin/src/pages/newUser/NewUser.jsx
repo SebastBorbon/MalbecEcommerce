@@ -2,7 +2,6 @@ import "./newUser.css";
 import { useState } from "react";
 import { addMalbecUsers } from "../../redux/apiCalls";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 
 export default function NewUser() {
   const [inputs, setInputs] = useState({});
