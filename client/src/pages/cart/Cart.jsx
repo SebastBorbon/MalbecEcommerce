@@ -7,6 +7,8 @@ import StripeCheckout from "react-stripe-checkout";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { emptyCart } from "../../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const KEY =
   "pk_test_51K4szeFnWhKaaSIYZQC8u4CsYNcIs7xfYZclOULVwtAG72nfWToBFrSIqsUHQuRhpA9FvjeSsUNdqoxRISR8Cjsb004orMmqWe";
@@ -15,6 +17,7 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const onToken = (token) => {
     setStripeToken(token);
@@ -42,7 +45,11 @@ const Cart = () => {
   const handleProducts = () => {
     navigate("/products/shoes");
   };
-
+  const clearCart = () => {
+    if (cart) {
+      dispatch(emptyCart());
+    }
+  };
   return (
     <div className="Cart-Container">
       <Navbar />
@@ -53,10 +60,11 @@ const Cart = () => {
           <button className="BtnTop" onClick={handleProducts}>
             Continue Shopping
           </button>
+
           <div className="TextCart-Container">
-            <span className="TextTop">
-              Shopping Bag: <b>{cart.quantity}</b> items
-            </span>
+            <button className="BtnTop" onClick={clearCart}>
+              Clear Shopping cart
+            </button>
           </div>
           <StripeCheckout
             name="Malbec"
