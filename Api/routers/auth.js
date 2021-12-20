@@ -5,7 +5,6 @@ const CryptoJS = require("crypto-js");
 const router = express.Router();
 
 router.post("/signup", async (req, res) => {
-  console.log(req.body);
   const newUser = new User({
     username: req.body.userName,
     email: req.body.email,
@@ -26,7 +25,6 @@ router.post("/signup", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    console.log(req.body);
     const user = await User.findOne({ username: req.body.userName });
     if (!user) return res.status(401).json("Wrong credentials");
 

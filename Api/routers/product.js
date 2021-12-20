@@ -15,7 +15,6 @@ router.post("/", verifyAdmin, async (req, res) => {
 });
 
 router.put("/:id", verifyAdmin, async (req, res) => {
-  console.log(req.body);
   try {
     const updatedProduct = await Product.findByIdAndUpdate(
       req.params.id,
@@ -57,13 +56,14 @@ router.get("/", async (req, res) => {
       products = await Product.find().sort({ createdAt: -1 }).limit(5);
     } else if (queryCategory) {
       products = await Product.find({
-        categories: {
+        category: {
           $in: [queryCategory],
         },
       });
     } else {
       products = await Product.find();
     }
+
     res.json(products);
   } catch (err) {
     res.status(500).json(err);

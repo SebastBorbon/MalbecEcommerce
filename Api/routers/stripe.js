@@ -5,7 +5,6 @@ const stripe = require("stripe")(
 );
 
 router.post("/payment", (req, res) => {
-  console.log(req.body);
   stripe.charges.create(
     {
       source: req.body.tokenId,
