@@ -3,6 +3,12 @@ import { useState, useEffect } from "react";
 import { login } from "../../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import { injectStyle } from "react-toastify/dist/inject-style";
+
+if (typeof window !== "undefined") {
+  injectStyle();
+}
 
 const Login = () => {
   const [userName, setUserName] = useState("");
@@ -18,12 +24,14 @@ const Login = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
+    if (error) return toast.dark("incorrect user credentials");
     login(dispatch, { userName, password });
   };
 
   const handleSignup = () => {
     navigate("/register");
   };
+
   return (
     <div className="Login-Container">
       <div className="Login-Wrapper">
@@ -48,13 +56,13 @@ const Login = () => {
           >
             LOGIN
           </button>
-          {error && <span className="Login-Error">Something went wrong</span>}
           <span className="Login-Span">new in Malbec?</span>
           <button className="BtnNewAccount" onClick={handleSignup}>
             Create new Account
           </button>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };
