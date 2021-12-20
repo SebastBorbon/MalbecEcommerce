@@ -9,7 +9,7 @@ import "./ProductList.css";
 const ProductList = () => {
   const location = useLocation();
   const category = location.pathname.split("/")[2];
-  const [filters, setFilters] = useState({});
+  const [filters, setFilters] = useState([]);
   const [sort, setSort] = useState("Newest");
 
   const handleFilters = (e) => {
@@ -19,12 +19,12 @@ const ProductList = () => {
       [e.target.name]: value,
     });
   };
+
   return (
     <div className="ProductList-Container">
       <Announcement />
       <Navbar />
 
-      <h1 className="Title-Filter">{category.toUpperCase()}</h1>
       <div className="ProductList-FilterContainer">
         <div className="ProductList-Filter">
           <span className="Text-Filter">Filter Products:</span>
@@ -33,15 +33,10 @@ const ProductList = () => {
             name="brand"
             onChange={handleFilters}
           >
-            <option className="ProductList-OptionTitle" disabled>
-              Brand
-            </option>
             <option className="ProductList-Option">nike</option>
             <option className="ProductList-Option">jordan</option>
             <option className="ProductList-Option">adidas</option>
             <option className="ProductList-Option">puma</option>
-            <option className="ProductList-Option">yeezi</option>
-            <option className="ProductList-Option">off White</option>
           </select>
           <select
             className="ProductList-Select"

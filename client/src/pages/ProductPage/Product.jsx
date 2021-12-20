@@ -9,6 +9,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { addProduct } from "../../redux/cartRedux";
 import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import { injectStyle } from "react-toastify/dist/inject-style";
+
+if (typeof window !== "undefined") {
+  injectStyle();
+}
 
 const Product = () => {
   const location = useLocation();
@@ -26,7 +32,6 @@ const Product = () => {
         );
 
         setProduct(res.data);
-        console.log(res.data);
       } catch {}
     };
     getProduct();
@@ -43,6 +48,7 @@ const Product = () => {
   const handleClick = () => {
     //update cart
     dispatch(addProduct({ ...product, quantity, size }));
+    return toast.dark("Added to cart");
   };
 
   return (
@@ -94,6 +100,7 @@ const Product = () => {
         </div>
       </div>
       <Footer />
+      <ToastContainer />
     </div>
   );
 };
