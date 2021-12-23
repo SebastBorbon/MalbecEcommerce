@@ -5,6 +5,7 @@ import WidgetSm from "../../components/widgetSm/WidgetSm";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
 import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
+import { GET_URL } from "../../requestMethods";
 
 export default function Home() {
   const [userStats, setUserStats] = useState([]);
@@ -32,7 +33,7 @@ export default function Home() {
   useEffect(() => {
     const getStats = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/user/stats", {
+        const res = await axios.get(`${GET_URL}user/stats`, {
           headers: { token: `Bearer ${TOKEN}` },
         });
         res.data.map((item) => {
