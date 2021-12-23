@@ -9,6 +9,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { emptyCart } from "../../redux/cartRedux";
 import { useDispatch } from "react-redux";
+import { GET_URL } from "../../requestMethods";
 
 const KEY =
   "pk_test_51K4szeFnWhKaaSIYZQC8u4CsYNcIs7xfYZclOULVwtAG72nfWToBFrSIqsUHQuRhpA9FvjeSsUNdqoxRISR8Cjsb004orMmqWe";
@@ -25,13 +26,10 @@ const Cart = () => {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const res = await axios.post(
-          "http://localhost:3000/api/checkout/payment",
-          {
-            tokenId: stripeToken.id,
-            amount: cart.total * 100,
-          }
-        );
+        const res = await axios.post(`${GET_URL}api/checkout/payment`, {
+          tokenId: stripeToken.id,
+          amount: cart.total * 100,
+        });
         navigate("/success", { state: { data: res.data, products: cart } });
       } catch (err) {
         console.log(err);

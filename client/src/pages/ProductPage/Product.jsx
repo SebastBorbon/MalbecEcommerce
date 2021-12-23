@@ -11,6 +11,7 @@ import { addProduct } from "../../redux/cartRedux";
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import { injectStyle } from "react-toastify/dist/inject-style";
+import { GET_URL } from "../../requestMethods";
 
 if (typeof window !== "undefined") {
   injectStyle();
@@ -27,9 +28,7 @@ const Product = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await axios.get(
-          "http://localhost:3000/api/products/find/" + id
-        );
+        const res = await axios.get(`${GET_URL}products/find/` + id);
 
         setProduct(res.data);
       } catch {}

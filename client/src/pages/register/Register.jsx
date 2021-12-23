@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { login } from "../../redux/apiCalls";
 import { useDispatch } from "react-redux";
+import { GET_URL } from "../../requestMethods";
 
 const Register = () => {
   const [inputs, setInputs] = useState([]);
@@ -19,10 +20,7 @@ const Register = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "http://localhost:3000/api/auth/signup",
-        inputs
-      );
+      const res = await axios.post(`${GET_URL}api/auth/signup`, inputs);
       if (res.data === "new user created") {
         login(dispatch, {
           userName: inputs.userName,

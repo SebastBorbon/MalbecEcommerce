@@ -2,6 +2,7 @@ import "./Products.css";
 import ProductItem from "./productItem/ProductItem";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { GET_URL } from "../../requestMethods";
 const Products = ({ category, filters, sort }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -11,8 +12,8 @@ const Products = ({ category, filters, sort }) => {
       try {
         const res = await axios.get(
           category
-            ? `http://localhost:3000/api/products?category=${category}`
-            : "http://localhost:3000/api/products"
+            ? `${GET_URL}products?category=${category}`
+            : `${GET_URL}products`
         );
         setProducts(res.data);
       } catch (err) {}
