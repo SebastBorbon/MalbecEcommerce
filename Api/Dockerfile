@@ -1,6 +1,6 @@
 FROM node:12
 
-COPY [".", "/usr/src/"]
+COPY [".", "/usr/src/malbecapi"]
 
 WORKDIR /usr/src
 
