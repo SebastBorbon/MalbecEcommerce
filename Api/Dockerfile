@@ -1,6 +1,6 @@
 FROM node:12
 
-COPY [".", "/usr/src/"]
+COPY [".", "/usr/src"]
 
 WORKDIR /usr/src
 

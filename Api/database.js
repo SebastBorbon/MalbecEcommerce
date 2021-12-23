@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 //I setup the info nedeed to connect with te database on mongo
-const url = `mongodb://admin:admin@localhost:27017/malbecDB`;
+const url = `mongodb://admin:admin@mongodb:27017/malbecDB`;
 
 const connectionParams = {
   useNewUrlParser: true,
