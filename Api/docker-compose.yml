@@ -1,6 +1,19 @@
 version: "3.8"
 
 services:
+  malbec:
+    build: .
+    environment:
+      MONGO_URL: "mongodb://admin:admin@mongodb:27017/malbecDB"
+      PORT: "3000"
+    depends_on:
+      - mongodb
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src
+      - /usr/src/node_modules
+
   mongodb:
     image: mongo:latest
     container_name: mongodb
