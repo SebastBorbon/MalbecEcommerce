@@ -2,7 +2,7 @@
   width: 100vw;
   height: 100vh;
   background: linear-gradient(rgba(26, 26, 26, 0.5), rgba(51, 51, 51, 0.5)),
-    url("https://www.43einhalb.com/media/233851/w/2000/h/1200/n/nike-air-jordan-1-mid-gs-pink-quartz-555112-603-mood-3.jpg")
+    url("https://cdn.accentuate.io/4558796095597/13308659794029/Wethenew-Air-Jordan-1-Mid-Pink-Quartz-3-v1599038676857.jpg?1080x1080")
       center;
   display: flex;
   align-items: center;
@@ -44,4 +44,9 @@
 }
 .BtnRegister:hover {
   background-color: rgb(134, 71, 115);
+}
+@media only screen and (max-width: 380px) {
+  .Register-Wrapper {
+    width: 75%;
+  }
 }

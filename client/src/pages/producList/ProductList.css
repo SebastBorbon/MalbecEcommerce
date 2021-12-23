@@ -21,3 +21,16 @@
   padding: 10px;
   margin-right: 20px;
 }
+@media only screen and (max-width: 380px) {
+  .ProductList-Filter {
+    width: 0px 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .Text-Filter {
+    margin-right: 0px;
+  }
+  .ProductList-Select {
+    margin: 10px 0px;
+  }
+}

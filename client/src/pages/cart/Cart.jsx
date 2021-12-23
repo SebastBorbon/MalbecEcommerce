@@ -63,7 +63,7 @@ const Cart = () => {
 
           <div className="TextCart-Container">
             <button className="BtnTop" onClick={clearCart}>
-              Clear Shopping cart
+              Clear cart
             </button>
           </div>
           <StripeCheckout

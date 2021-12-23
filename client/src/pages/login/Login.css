@@ -88,3 +88,9 @@
 .Login-Error {
   color: red;
 }
+
+@media only screen and (max-width: 380px) {
+  .Login-Wrapper {
+    width: 75%;
+  }
+}

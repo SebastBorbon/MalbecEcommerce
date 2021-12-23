@@ -97,3 +97,48 @@
 .Product-BtnCart:hover {
   background-color: rgb(134, 71, 115);
 }
+@media only screen and (max-width: 380px) {
+  .Product-Wrapper {
+    padding: 10px;
+    flex-direction: column;
+  }
+  .Product-ImgContainer {
+    position: inherit;
+    width: 100%;
+  }
+  .Product-Img {
+    width: 40%;
+    position: inherit;
+  }
+  .Title-InfoProduct {
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .Desc-InfoProduct {
+    margin: 20px 0px;
+    font-size: 10px;
+  }
+  .Price-InfoProduct {
+    font-size: 20px;
+  }
+  .Product-FilterContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .Product-BtnSize {
+    width: 35px;
+    height: 30px;
+    margin: 0px 10px;
+    font-size: 12px;
+  }
+  .Product-AddContainer {
+    width: 100%;
+  }
+  .Product-BtnCart {
+    width: 70px;
+    height: 60px;
+    font-size: 10px;
+    padding: 0px 10px;
+  }
+}

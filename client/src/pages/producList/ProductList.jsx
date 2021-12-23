@@ -24,7 +24,6 @@ const ProductList = () => {
     <div className="ProductList-Container">
       <Announcement />
       <Navbar />
-
       <div className="ProductList-FilterContainer">
         <div className="ProductList-Filter">
           <span className="Text-Filter">Filter Products:</span>
