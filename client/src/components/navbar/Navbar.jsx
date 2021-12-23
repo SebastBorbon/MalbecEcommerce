@@ -10,7 +10,6 @@ import { logOut } from "../../redux/userReducer";
 import { useDispatch } from "react-redux";
 
 const Navbar = () => {
-  const quantity = useSelector((state) => state.cart.quantity);
   const user = useSelector((state) => state.user.currentUser);
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
@@ -78,7 +77,7 @@ const Navbar = () => {
           )}
           <Link to="/cart" className="LinkItem">
             <div className="MenuItem">
-              <Badge badgeContent={quantity} color="primary">
+              <Badge color="primary">
                 <ShoppingCartOutlinedIcon />
               </Badge>
             </div>

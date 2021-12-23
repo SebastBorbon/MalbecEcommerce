@@ -75,3 +75,12 @@
 .Footer-Link:hover {
   color: aqua;
 }
+
+@media only screen and (max-width: 380px) {
+  .Footer-Container {
+    flex-direction: column;
+  }
+  .Footer-Center {
+    display: none;
+  }
+}

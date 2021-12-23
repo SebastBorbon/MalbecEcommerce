@@ -2,6 +2,7 @@
   height: 60px;
   background-color: white;
 }
+
 .navbar-wrapper {
   padding: 10px 20px;
   display: flex;
@@ -25,7 +26,7 @@
   border: 0.5px solid #474747;
   display: flex;
   align-items: center;
-  margin-left: 25px;
+  margin-left: 10px;
   padding: 5px;
 }
 
@@ -63,7 +64,6 @@
   display: flex;
 }
 .MenuItem {
-  font-size: 20px;
   cursor: pointer;
   margin-left: 30px;
 }
@@ -77,4 +77,36 @@
 }
 .BtnLogOut:hover {
   background-color: rgb(134, 71, 115);
+}
+
+@media only screen and (max-width: 380px) {
+  .navbar-container {
+    height: 50px;
+  }
+  .navbar-wrapper {
+    padding: 10px 0px;
+  }
+  .navbar-Language {
+    display: none;
+  }
+  .SearchInput {
+    width: 40px;
+  }
+  .Logo {
+    font-size: 24px;
+  }
+  .navbar-right {
+    justify-content: center;
+    flex: 2;
+
+    margin-right: 2px;
+  }
+  .LinkItem {
+    font-size: 13px;
+    display: inline-block;
+  }
+  .BtnLogOut {
+    height: 15px;
+    font-size: 12px;
+  }
 }
