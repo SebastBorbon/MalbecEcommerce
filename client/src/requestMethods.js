@@ -1,1 +1,1 @@
-export const GET_URL = "https://malbecapi.sebasdev.com/api/";
+export const GET_URL = "http://malbecapi.sebasdev.com/api/";
