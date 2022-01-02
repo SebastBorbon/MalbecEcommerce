@@ -1,1 +1,1 @@
-export const GET_URL = "http://localhost:3000/api/";
+export const GET_URL = "https://malbecapi.sebasdev.com/api/";
