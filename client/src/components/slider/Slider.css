@@ -23,14 +23,13 @@
 .InfoButton {
   padding: 10px;
   font-size: 20px;
-  background-color: transparent;
+  background-color: #cfcfcf;
   cursor: pointer;
   border-radius: 5px;
   transition: all 0.2s ease;
 }
 .InfoButton:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 90%;
+  background-color: #9b9b9b;
 }
 
 @media only screen and (max-width: 380px) {
