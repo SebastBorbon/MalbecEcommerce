@@ -20,7 +20,7 @@ const Register = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${GET_URL}api/auth/signup`, inputs);
+      const res = await axios.post(`${GET_URL}auth/signup`, inputs);
       if (res.data === "new user created") {
         login(dispatch, {
           userName: inputs.userName,
