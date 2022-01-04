@@ -15,14 +15,14 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/login">
+        <Route exact path="/">
           <Login />
         </Route>
         <>
           <Topbar />
           <div className="container">
             <Sidebar />
-            <Route exact path="/">
+            <Route exact path="/Home">
               <Home />
             </Route>
             <Route path="/users">

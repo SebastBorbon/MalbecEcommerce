@@ -2,11 +2,13 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/apiCalls";
 import "./Login.css";
+import { useHistory } from "react-router";
 
 const Login = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleClick = (e) => {
     e.preventDefault();
