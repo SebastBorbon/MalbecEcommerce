@@ -17,4 +17,6 @@ the client App was made all with react, redux toolkit and stripe for payment met
 I use redux to mantain the user session and to save items in the shopping cart
 the Visual part is Css and some styled components, the icons were add with material UI icons
 
+if u want to see the app you can download and install the dependencies, or you can go to 
 
+# [http://malbec.sebasdev.com/](http://malbec.sebasdev.com/) 
