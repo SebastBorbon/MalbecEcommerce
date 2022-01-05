@@ -25,20 +25,13 @@ import {
   addMalbecUsersSuccess,
   addMalbecUsersFailure,
 } from "./usersReducer";
-import { GET_URL } from "../requestMethods";
-
-const TOKEN = JSON.parse(
-  JSON.parse(localStorage.getItem("persist:root")).currentUser
-).token;
-
-const AdminToken = {
-  headers: { token: `Bearer ${TOKEN}` },
-};
+import { GET_URL, AdminToken } from "../requestMethods";
 
 export const login = async (dispatch, user) => {
   dispatch(loginStart());
   try {
     const res = await axios.post(`${GET_URL}auth/login`, user);
+    window.localStorage.setItem("TOKEN", res.data.token);
     dispatch(loginSuccess(res.data));
   } catch (err) {
     dispatch(loginFailure());
@@ -80,6 +73,7 @@ export const addProducts = async (product, dispatch) => {
   try {
     const res = await axios.post(`${GET_URL}products`, product, AdminToken);
     dispatch(addProductSuccess(res.data));
+    getProducts(dispatch);
   } catch (err) {
     dispatch(addProductFailure());
   }
@@ -89,7 +83,6 @@ export const getMalbecUsers = async (dispatch) => {
   dispatch(getMalbecUsersStart());
   try {
     const res = await axios.get(`${GET_URL}user`, AdminToken);
-
     dispatch(getMalbecUsersSuccess(res.data));
   } catch (err) {
     dispatch(getMalbecUsersFailure());
@@ -111,6 +104,7 @@ export const addMalbecUsers = async (user, dispatch) => {
   try {
     const res = await axios.post(`${GET_URL}auth/signup`, user, AdminToken);
     dispatch(addMalbecUsersSuccess(res.data));
+    getMalbecUsers(dispatch);
   } catch (err) {
     dispatch(addMalbecUsersFailure());
   }
