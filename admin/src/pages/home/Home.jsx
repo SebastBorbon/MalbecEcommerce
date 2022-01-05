@@ -5,13 +5,12 @@ import WidgetSm from "../../components/widgetSm/WidgetSm";
 import WidgetLg from "../../components/widgetLg/WidgetLg";
 import { useState, useEffect, useMemo } from "react";
 import axios from "axios";
-import { GET_URL } from "../../requestMethods";
+import { GET_URL, PAGE_URL } from "../../requestMethods";
 
 export default function Home() {
   const [userStats, setUserStats] = useState([]);
-  const TOKEN = JSON.parse(
-    JSON.parse(localStorage.getItem("persist:root")).currentUser
-  ).token;
+  const TOKEN = window.localStorage.getItem("TOKEN");
+
   const MONTHS = useMemo(
     () => [
       "Jan",
@@ -43,10 +42,10 @@ export default function Home() {
           ]);
         });
       } catch (err) {
-        console.log(err);
+        window.location.replace(PAGE_URL);
       }
     };
-    getStats();
+    if (TOKEN) getStats();
   }, [MONTHS, TOKEN]);
   return (
     <div className="home">

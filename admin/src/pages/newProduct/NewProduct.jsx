@@ -2,7 +2,12 @@ import "./newProduct.css";
 import { useState } from "react";
 import { addProducts } from "../../redux/apiCalls";
 import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import { injectStyle } from "react-toastify/dist/inject-style";
 
+if (typeof window !== "undefined") {
+  injectStyle();
+}
 export default function NewProduct() {
   const [size, setSizes] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -26,6 +31,7 @@ export default function NewProduct() {
     e.preventDefault(e);
     const product = { ...inputs, size, categories };
     addProducts(product, dispatch);
+    toast("new product created!");
   };
 
   return (
@@ -100,6 +106,7 @@ export default function NewProduct() {
           Create
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 }

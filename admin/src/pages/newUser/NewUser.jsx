@@ -2,6 +2,11 @@ import "./newUser.css";
 import { useState } from "react";
 import { addMalbecUsers } from "../../redux/apiCalls";
 import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import { injectStyle } from "react-toastify/dist/inject-style";
+if (typeof window !== "undefined") {
+  injectStyle();
+}
 
 export default function NewUser() {
   const [inputs, setInputs] = useState({});
@@ -16,7 +21,7 @@ export default function NewUser() {
     e.preventDefault(e);
     const user = { ...inputs };
     addMalbecUsers(user, dispatch);
-    window.location.reload();
+    toast("new product created!");
   };
   return (
     <div className="newUser">
@@ -62,6 +67,7 @@ export default function NewUser() {
           Create
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 }

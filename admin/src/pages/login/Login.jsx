@@ -1,12 +1,22 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/apiCalls";
 import "./Login.css";
+import { useHistory } from "react-router";
+import logo from "../../images/LogoSebas.svg";
 
 const Login = () => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const history = useHistory();
+  const user = useSelector((state) => state.user.currentUser);
+
+  useEffect(() => {
+    if (user) {
+      history.push("/Home");
+    }
+  }, [user, history]);
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -15,6 +25,9 @@ const Login = () => {
 
   return (
     <div className="Login-Container">
+      <div className="Img-Container">
+        <img className="Img" src={logo} alt=" " />
+      </div>
       <div className="Login-Wrapper">
         <h1 className="Login-Title">Admin Panel</h1>
         <form className="Login-Form">
