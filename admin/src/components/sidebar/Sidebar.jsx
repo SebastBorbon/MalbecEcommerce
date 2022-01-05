@@ -1,11 +1,5 @@
 import "./sidebar.css";
-import {
-  LineStyle,
-  Timeline,
-  TrendingUp,
-  PermIdentity,
-  Storefront,
-} from "@material-ui/icons";
+import { LineStyle, PermIdentity, Storefront } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
 export default function Sidebar() {
@@ -21,14 +15,6 @@ export default function Sidebar() {
                 Home
               </li>
             </Link>
-            <li className="sidebarListItem">
-              <Timeline className="sidebarIcon" />
-              Analytics
-            </li>
-            <li className="sidebarListItem">
-              <TrendingUp className="sidebarIcon" />
-              Sales
-            </li>
           </ul>
         </div>
         <div className="sidebarMenu">
@@ -37,13 +23,30 @@ export default function Sidebar() {
             <Link to="/users" className="link">
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
-                Users
+                Users List
               </li>
             </Link>
             <Link to="/products" className="link">
               <li className="sidebarListItem">
                 <Storefront className="sidebarIcon" />
-                Products
+                Products List
+              </li>
+            </Link>
+          </ul>
+        </div>
+        <div className="sidebarMenu">
+          <h3 className="sidebarTitle">Create</h3>
+          <ul className="sidebarList">
+            <Link to="/newProduct" className="link">
+              <li className="sidebarListItem">
+                <Storefront className="sidebarIcon" />
+                create Product
+              </li>
+            </Link>
+            <Link to="/newUser" className="link">
+              <li className="sidebarListItem">
+                <PermIdentity className="sidebarIcon" />
+                create User
               </li>
             </Link>
           </ul>
