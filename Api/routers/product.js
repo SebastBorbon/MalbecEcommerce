@@ -47,7 +47,7 @@ router.get("/find/:id", async (req, res) => {
   }
 });
 
-router.get("/", async (req, res) => {
+router.get("/", verifyAdmin, async (req, res) => {
   const queryNew = req.query.new;
   const queryCategory = req.query.category;
   try {
