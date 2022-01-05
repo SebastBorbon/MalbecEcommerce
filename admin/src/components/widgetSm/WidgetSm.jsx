@@ -2,13 +2,11 @@ import "./widgetSm.css";
 import { Visibility } from "@material-ui/icons";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { GET_URL } from "../../requestMethods";
+import { GET_URL, PAGE_URL } from "../../requestMethods";
 
 export default function WidgetSm() {
   const [users, setUsers] = useState([]);
-  const TOKEN = JSON.parse(
-    JSON.parse(localStorage.getItem("persist:root")).currentUser
-  ).token;
+  const TOKEN = window.localStorage.getItem("TOKEN");
 
   useEffect(() => {
     const getUsers = async () => {
@@ -18,7 +16,7 @@ export default function WidgetSm() {
         });
         setUsers(res.data);
       } catch (err) {
-        console.log(err);
+        window.location.replace(PAGE_URL);
       }
     };
 

@@ -2,13 +2,11 @@ import "./widgetLg.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { format } from "timeago.js";
-import { GET_URL } from "../../requestMethods";
+import { GET_URL, PAGE_URL } from "../../requestMethods";
 
 export default function WidgetLg() {
   const [orders, setOrders] = useState([]);
-  const TOKEN = JSON.parse(
-    JSON.parse(localStorage.getItem("persist:root")).currentUser
-  ).token;
+  const TOKEN = window.localStorage.getItem("TOKEN");
 
   useEffect(() => {
     const getOrders = async () => {
@@ -18,7 +16,7 @@ export default function WidgetLg() {
         });
         setOrders(res.data);
       } catch (err) {
-        console.log(err);
+        window.location.replace(PAGE_URL);
       }
     };
 
