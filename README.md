@@ -29,7 +29,7 @@ get, delete and update, the products, and the users.
 
 all through a CRUD Redux application. 
 
-if u want to see the app you can go to, of course you need a admin user to change everything
+if u want to see the app you can go to the admin link, of course you need a admin user to change everything
 but if you want to watch you can log in with this user
 
 - username: test
