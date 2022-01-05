@@ -9,9 +9,9 @@ import { GET_URL } from "../../requestMethods";
 
 export default function Home() {
   const [userStats, setUserStats] = useState([]);
-  const TOKEN = JSON.parse(
-    JSON.parse(localStorage.getItem("persist:root")).currentUser
-  ).token;
+  const getToken = localStorage.getItem("persist:root");
+  const TOKEN = JSON.parse(JSON.parse(getToken).currentUser).token;
+
   const MONTHS = useMemo(
     () => [
       "Jan",

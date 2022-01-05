@@ -25,15 +25,7 @@ import {
   addMalbecUsersSuccess,
   addMalbecUsersFailure,
 } from "./usersReducer";
-import { GET_URL } from "../requestMethods";
-
-const TOKEN = JSON.parse(
-  JSON.parse(localStorage.getItem("persist:root")).currentUser
-).token;
-
-const AdminToken = {
-  headers: { token: `Bearer ${TOKEN}` },
-};
+import { GET_URL, AdminToken } from "../requestMethods";
 
 export const login = async (dispatch, user) => {
   dispatch(loginStart());

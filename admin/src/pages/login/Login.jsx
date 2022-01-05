@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../redux/apiCalls";
 import "./Login.css";
 import { useHistory } from "react-router";
@@ -9,6 +9,11 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const history = useHistory();
+  const user = useSelector((state) => state.user.currentUser);
+
+  useEffect(() => {
+    if (user) history.push("/Home");
+  }, [user, history]);
 
   const handleClick = (e) => {
     e.preventDefault();
