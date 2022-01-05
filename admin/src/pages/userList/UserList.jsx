@@ -56,17 +56,14 @@ export default function UserList() {
 
   return (
     <div className="userList">
-      <Link to="/newUser">
-        <button className="userAddButton">Create</button>
-      </Link>
       <DataGrid
         rows={malbecUsers}
         disableSelectionOnClick
         columns={columns}
         getRowId={(row) => row._id}
-        pageSize={5}
-        rowsPerPageOptions={[5, 6, 7, 8]}
         checkboxSelection
+        pageSize={10}
+        rowsPerPageOptions={[10]}
       />
     </div>
   );

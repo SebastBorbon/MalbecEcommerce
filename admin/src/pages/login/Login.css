@@ -4,7 +4,18 @@
   background-color: rgb(93, 78, 107);
   display: flex;
   align-items: center;
+  flex-direction: column;
+}
+.Img-Container {
+  display: flex;
   justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.Img {
+  height: 30vh;
 }
 .Login-Title {
   font-size: 30px;
@@ -43,4 +54,10 @@
 }
 .BtnLogin:disabled {
   cursor: not-allowed;
+}
+
+@media only screen and (max-width: 380px) {
+  .Login-Wrapper {
+    width: 70%;
+  }
 }

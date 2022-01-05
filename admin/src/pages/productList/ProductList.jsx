@@ -22,6 +22,7 @@ export default function ProductList() {
     { field: "_id", headerName: "ID", width: 200 },
     {
       field: "product",
+
       headerName: "Product",
       width: 200,
       renderCell: (params) => {
@@ -62,16 +63,13 @@ export default function ProductList() {
 
   return (
     <div className="productList">
-      <Link to="/newproduct">
-        <button className="productAddButton">Create</button>
-      </Link>
       <DataGrid
         rows={products}
         disableSelectionOnClick
         columns={columns}
         getRowId={(row) => row._id}
-        pageSize={8}
-        rowsPerPageOptions={[8]}
+        pageSize={10}
+        rowsPerPageOptions={[10]}
         checkboxSelection
       />
     </div>
