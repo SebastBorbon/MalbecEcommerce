@@ -30,7 +30,7 @@
 .ButtonCategory {
   padding: 10px;
   font-size: 20px;
-  background-color: transparent;
+  background-color: black;
   border-color: white;
   cursor: pointer;
   border-radius: 5px;
@@ -38,8 +38,7 @@
   transition: all 0.2s ease;
 }
 .ButtonCategory:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 90%;
+  background-color: rgb(29, 29, 29);
 }
 .Link-Category {
   color: white;

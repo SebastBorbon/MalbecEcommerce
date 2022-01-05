@@ -40,14 +40,13 @@ const Slider = () => {
   useEffect(() => {
     let isMounted = true;
     const SliderMove = () => {
-      if (slideIndex < sliderItems.length - 1)
-        if (isMounted) {
-          setSlideIndex(slideIndex + 1);
-        } else {
-          setSlideIndex(0);
-        }
+      if (slideIndex < sliderItems.length - 1) {
+        if (isMounted) return setSlideIndex(slideIndex + 1);
+      } else {
+        setSlideIndex(0);
+      }
     };
-    setTimeout(SliderMove, 4000);
+    setTimeout(SliderMove, 3000);
 
     return () => {
       isMounted = false;

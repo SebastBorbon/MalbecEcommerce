@@ -53,16 +53,16 @@
   height: 30px;
   margin: 0px 10px;
   font-size: 20px;
-  background-color: transparent;
+  background-color: white;
   cursor: pointer;
   border-radius: 3px;
+  transition: all 0.2s ease;
 }
 .Product-BtnSize:hover {
-  background-color: rgba(134, 134, 134, 0.2);
+  background-color: rgb(184, 184, 184);
 }
 .Product-BtnSize:focus {
-  background-color: rgba(51, 32, 39, 0.2);
-  opacity: 90%;
+  background-color: rgb(255, 170, 210);
 }
 
 .Product-AddContainer {
