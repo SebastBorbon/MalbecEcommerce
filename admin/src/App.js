@@ -15,22 +15,14 @@ function App() {
   return (
     <Router>
       <Switch>
-<<<<<<< HEAD
-        <Route path="/">
-=======
         <Route exact path="/">
->>>>>>> admin-malbec
           <Login />
         </Route>
         <>
           <Topbar />
           <div className="container">
             <Sidebar />
-<<<<<<< HEAD
-            <Route exact path="/home">
-=======
-            <Route exact path="/Home">
->>>>>>> admin-malbec
+            <Route path="/Home">
               <Home />
             </Route>
             <Route path="/users">

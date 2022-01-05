@@ -6,11 +6,8 @@ services:
     environment:
       MONGO_URL: "mongodb://admin:admin@mongodb:27017/malbecDB"
       PORT: "3000"
-<<<<<<< HEAD
-=======
       SECRETPASS: "SebasMalbec"
       JWT_KEY: "SebasToken"
->>>>>>> api-malbec
     depends_on:
       - mongodb
     ports:
