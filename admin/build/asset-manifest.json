@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1a77d42c.chunk.css",
+    "main.js": "/static/js/main.1962bc2b.chunk.js",
+    "main.js.map": "/static/js/main.1962bc2b.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.59367571.js",
+    "runtime-main.js.map": "/static/js/runtime-main.59367571.js.map",
+    "static/js/2.fbf70898.chunk.js": "/static/js/2.fbf70898.chunk.js",
+    "static/js/2.fbf70898.chunk.js.map": "/static/js/2.fbf70898.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.1a77d42c.chunk.css.map": "/static/css/main.1a77d42c.chunk.css.map",
+    "static/js/2.fbf70898.chunk.js.LICENSE.txt": "/static/js/2.fbf70898.chunk.js.LICENSE.txt",
+    "static/media/LogoSebas.16d5484d.svg": "/static/media/LogoSebas.16d5484d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.59367571.js",
+    "static/js/2.fbf70898.chunk.js",
+    "static/css/main.1a77d42c.chunk.css",
+    "static/js/main.1962bc2b.chunk.js"
+  ]
+}
