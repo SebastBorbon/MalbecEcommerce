@@ -7,7 +7,7 @@ the project has 3 parts, the rest Api, the client side and the admin side
 # Rest Api
 
 the rest api was made entirely with express, token verification with JWT and the database in local mongoDB, all the rest Api
-and the DB are on a Docker COntainer and in an amazon server, if you want to see it working on your device just download and 
+and the DB are on a Docker Container and in an amazon server, if you want to see it working on your device just download and 
 install all the dependencies on your device! 
 
 
