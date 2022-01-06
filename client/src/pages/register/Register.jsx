@@ -1,6 +1,6 @@
 import "./Register.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import { login } from "../../redux/apiCalls";
 import { useDispatch } from "react-redux";
@@ -66,6 +66,9 @@ const Register = () => {
             By creating an account, I consent to the processing of my personal
             data in accordance with the <b>PRIVACY POLICY</b>
           </span>
+          <Link to="/">
+            <span className="Login-Link">Back to Home</span>
+          </Link>
           <button className="BtnRegister" onClick={handleClick}>
             SIGN UP
           </button>

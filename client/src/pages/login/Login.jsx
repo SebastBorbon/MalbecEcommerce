@@ -2,9 +2,10 @@ import "./Login.css";
 import { useState, useEffect } from "react";
 import { login } from "../../redux/apiCalls";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { injectStyle } from "react-toastify/dist/inject-style";
+import { loginError } from "../../redux/userReducer";
 
 if (typeof window !== "undefined") {
   injectStyle();
@@ -20,11 +21,14 @@ const Login = () => {
 
   useEffect(() => {
     if (user) navigate("/");
-  }, [user, navigate]);
+    if (error) {
+      toast.dark("incorrect user credentials");
+      dispatch(loginError());
+    }
+  }, [user, navigate, error, dispatch]);
 
   const handleClick = (e) => {
     e.preventDefault();
-    if (error) return toast.dark("incorrect user credentials");
     login(dispatch, { userName, password });
   };
 
@@ -48,7 +52,9 @@ const Login = () => {
             type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <span className="Login-Link">forgot the password?</span>
+          <Link to="/">
+            <span className="Login-Link">Back to Home</span>
+          </Link>
           <button
             className="BtnLogin"
             onClick={handleClick}
