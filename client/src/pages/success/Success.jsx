@@ -3,18 +3,21 @@ import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Success = () => {
   const location = useLocation();
   const data = location.state.data;
   const cart = location.state.products;
   const [orderId, setOrderId] = useState(null);
+  const user = useSelector((state) => state.user.currentUser);
   console.log(location.state);
   useEffect(() => {
     const createOrder = async () => {
       try {
         const res = await axios.post("http://localhost:3000/api/orders", {
           userId:
+            user._id ??
             "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYjE0ZmM5MWM3ZWMzNTYxZjRjYjNiMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTYzOTQzNjEzMH0.mAWnGaeeppSJOliicW3g4w_LCKjqIL2jfu4xjEe20p8",
           products: cart.products.map((item) => ({
             productId: item._id,
