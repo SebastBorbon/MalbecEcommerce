@@ -34,7 +34,7 @@ const Success = () => {
     if (data) {
       createOrder();
     }
-  }, [cart, data]);
+  }, [cart, data, user._id]);
   return (
     <div className="Success-Container">
       {orderId
