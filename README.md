@@ -35,6 +35,6 @@ but if you want to watch you can log in with this user
 - username: test
 - password: test
 
-# [http://adminmalbec.sebasdev.com/](http://admimalbec.sebasdev.com/)
+# [http://adminmalbec.sebasdev.com/](http://adminmalbec.sebasdev.com/)
 
 
